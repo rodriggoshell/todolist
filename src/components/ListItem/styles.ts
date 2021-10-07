@@ -21,6 +21,7 @@ export const Container = styled.div(({ done }:ContainerProps)=>(
 
 		label {
 			color: #ccc;
+			text-decoration: ${done ? 'line-through' : 'initial'};
 		}
 	`
 ));
