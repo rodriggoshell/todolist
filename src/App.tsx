@@ -19,13 +19,24 @@ function App() {
 			done: true
 		}
 	]);
+
+	const handleAddTask = (taskName: string) => {
+		let newList = [...list];
+		newList.push({
+			id: list.length + 1,
+			name: taskName,
+			done: false
+		});
+		setList(newList);
+	}
+
   return (
     <div>
       < C.Container>
       	<C.Area>
       		<C.Header>Lista de Tarefa</C.Header>
 
-			<AddArea />
+			<AddArea onEnter={ handleAddTask} />
 
       		{list.map((item, index)=>(
 
